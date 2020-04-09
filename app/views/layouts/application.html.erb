@@ -15,7 +15,12 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IBhelper</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
+          <% if user_signed_in? %>
+            <span class="badge badge-secondary">Здравствуйте, <%= current_user.email %></span>
+            <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, :class => 'btn btn-dark' %>
+          <% else %>
+            <%= link_to 'Войти', new_user_session_path, :class => 'btn btn-dark' %><%= link_to 'Зарегистрироваться', new_user_registration_path, :class => 'btn btn-dark' %>
+          <% end %>
         </li>
       </ul>
     </nav>

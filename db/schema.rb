@@ -10,10 +10,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_143853) do
+ActiveRecord::Schema.define(version: 2020_04_09_125627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accompanentfee", force: :cascade do |t|
+    t.text "description"
+    t.float "amount", default: 0.0
+    t.float "percents", default: 0.0
+    t.string "currency"
+  end
+
+  create_table "currency", force: :cascade do |t|
+    t.string "code"
+    t.float "startingcash", default: 0.0
+    t.float "commissions", default: 0.0
+    t.float "deposits", default: 0.0
+    t.float "dividends", default: 0.0
+    t.float "nettradessales", default: 0.0
+    t.float "nettradespurchase", default: 0.0
+    t.float "withholdingtax", default: 0.0
+    t.float "agio", default: 0.0
+    t.float "endingcash", default: 0.0
+    t.float "endingsettledcash", default: 0.0
+  end
+
+  create_table "dividends", force: :cascade do |t|
+    t.string "currency"
+    t.datetime "proceededdate"
+    t.text "description"
+    t.float "amount", default: 0.0
+    t.float "tax", default: 0.0
+    t.text "taxdescription"
+  end
+
+  create_table "forex", force: :cascade do |t|
+    t.string "currency"
+    t.string "symbol"
+    t.datetime "proceededdate"
+    t.float "tprice", default: 0.0
+    t.float "proceed", default: 0.0
+    t.float "feeinusd", default: 0.0
+    t.float "mtminusd", default: 0.0
+    t.string "code"
+  end
+
+  create_table "trades", force: :cascade do |t|
+    t.string "currency"
+    t.string "stockcode"
+    t.datetime "proceededdate"
+    t.integer "quanity", default: 0
+    t.float "tprice", default: 0.0
+    t.float "cprice", default: 0.0
+    t.float "proceeds", default: 0.0
+    t.float "fee", default: 0.0
+    t.float "basis", default: 0.0
+    t.float "plrealized", default: 0.0
+    t.float "plmtm", default: 0.0
+    t.string "code"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
