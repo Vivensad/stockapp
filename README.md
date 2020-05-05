@@ -1,24 +1,51 @@
 # README
+Currency
+Currency Code 
+Starting Cash
+Commissions
+Deposits
+Dividends
+Net Trades Sales
+Net Trades Purchase
+Withholding Tax
+Cash FX Translation Gain/Loss   - - Agio
+Ending Cash
+Ending Settled Cash	
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trades
+Currency
+Stock Symbol
+Proceeded date
+Quantity
+TPrice	
+CPrice	
+Proceeds
+Comm/Fee	------ Fee
+Basis
+Realized P/L ---------PLRealized
+MTM P/L--------------PLMTM
+Code
 
-Things you may want to cover:
+Forex
+Currency 
+Symbol
+Date/Time -Proceeded date
+TPrice	
+Proceeds
+Comm in USD	 - Fee in USD
+MTM in USD	
+Code
 
-* Ruby version
+Dividends
+Currency
+Date/Time -Proceeded date
+Description
+Amount
+Tax
+Tax Description
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Accompanent fee
+Description
+Amount
+Percents 
+Currency
